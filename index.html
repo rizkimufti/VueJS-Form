@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/papercss@1.1.0/dist/paper.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.js"></script>
+  <title>Registration</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Some Fresh Title</h1>
+    <div class="card">
+        <div class="card-body" v-if="!submit">
+
+            <h4 class="card-title">Add employee</h4>
+            
+            <div class="form-group">
+                <input type="text" class="input-block" placeholder="Name" v-model="name">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="input-block" placeholder="Job" v-model="role" v-model="role">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="input-block" placeholder="Email" v-model="email">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="input-block" placeholder="About" v-model="about">
+            </div>
+
+            <button class="background-success" v-on:click="submit = true">Submit</button>
+
+        </div>
+
+        <div class="card-body" v-if="submit">
+            <div class="row">
+                <div class="col-3 col">
+                    <img src="./img/profile.png" alt="profile">
+                </div>              
+
+                <div class="col-9 col"> 
+                    <h3>{{name}}</h3>
+                    <h4>{{role}} | <font color="blue">{{email}}</font></h4>
+                
+                    <h4>Biography<h4>
+                    <p>{{about}}</p>                      
+                </div>
+                <button class="background-success" class="clear" v-on:click="submit = false">Back</button>   
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <script src="myscript.js"></script>
+</body>
+</html>
